@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pokedexApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokedex</title>
+  <link type="text/css" rel="stylesheet" href="stylesheets/main.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="javascripts/main.js"></script>
+</head>
+<body ng-controller="PokedexCtrl">
+
+<h1>Pokedex</h1>
+
+<div class="container">
+  <div class="pokemon-grid">
+    <div class="cards">
+      <div class="card" ng-repeat="pokemon in pokemons" id="anchor{{pokemon.pkdx_id}}">
+        <div class="card-image" ng-click="showDetails(pokemon)">
+          <img ng-src="http://pokeapi.co/media/img/{{pokemon.pkdx_id}}.png" alt="">
+        </div>
+        <div class="card-header" ng-click="showDetails(pokemon)">
+          {{pokemon.name}}
+        </div>
+        <div class="card-copy">
+          <p>
+            <span class="badge-success"
+                  ng-repeat="type in pokemon.types"
+                  ng-style="{'background-color': typeColors[type.name]}"
+                  ng-click="filterPokemons(type.name)"
+            >
+              {{type.name.capitalizeFirstLetter()}}
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="load-button">
+      <button class="load-more" ng-click="loadMore()" ng-disabled="isLoading">
+        {{isLoading ? "Loading..." : "Load More"}}
+      </button>
+    </div>
+  </div>
+
+  <div class="pokemon-detailed" ng-show="showDetailedInfo" id="anchordetails">
+    <a href ng-click="gotoAnchor(selectedPokemon.pkdx_id)">&longleftarrow; Back</a>
+    <div class="card">
+      <div class="card-image">
+        <img ng-src="http://pokeapi.co/media/img/{{selectedPokemon.pkdx_id}}.png" alt="">
+      </div>
+      <div class="card-header">
+        <h2>{{selectedPokemon.name}} #00{{selectedPokemon.pkdx_id}}</h2>
+      </div>
+      <div class="card-copy">
+        <p>
+        <table class="tables">
+          <tbody>
+          <tr>
+            <td>Type</td>
+            <td>
+              <span ng-repeat="type in selectedPokemon.types">
+                {{type.name.capitalizeFirstLetter()}}<br>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>Attack</td>
+            <td>{{selectedPokemon.attack}}</td>
+          </tr>
+          <tr>
+            <td>Defense</td>
+            <td>{{selectedPokemon.defense}}</td>
+          </tr>
+          <tr>
+            <td>HP</td>
+            <td>{{selectedPokemon.hp}}</td>
+          </tr>
+          <tr>
+            <td>SP Attack</td>
+            <td>{{selectedPokemon.sp_atk}}</td>
+          </tr>
+          <tr>
+            <td>SP Defense</td>
+            <td>{{selectedPokemon.sp_def}}</td>
+          </tr>
+          <tr>
+            <td>Speed</td>
+            <td>{{selectedPokemon.speed}}</td>
+          </tr>
+          <tr>
+            <td>Weight</td>
+            <td>{{selectedPokemon.weight}}</td>
+          </tr>
+          <tr>
+            <td>Total moves</td>
+            <td>{{selectedPokemon.moves.length}}</td>
+          </tr>
+          </tbody>
+        </table>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
