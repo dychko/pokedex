@@ -403,7 +403,7 @@ h1 {
     width: 65.88078%; }
     .container .pokemon-grid:last-child {
       margin-right: 0; }
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: 40.625em) {
       .container .pokemon-grid {
         float: left;
         display: block;
@@ -411,7 +411,7 @@ h1 {
         width: 48.82117%; }
         .container .pokemon-grid:last-child {
           margin-right: 0; } }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 31.25em) {
       .container .pokemon-grid {
         float: left;
         display: block;
@@ -431,7 +431,7 @@ h1 {
     width: 31.76157%; }
     .container .pokemon-detailed:last-child {
       margin-right: 0; }
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: 40.625em) {
       .container .pokemon-detailed {
         float: left;
         display: block;
@@ -439,7 +439,7 @@ h1 {
         width: 48.82117%; }
         .container .pokemon-detailed:last-child {
           margin-right: 0; } }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 31.25em) {
       .container .pokemon-detailed {
         float: left;
         display: block;
