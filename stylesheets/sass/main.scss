@@ -8,6 +8,15 @@
 $small-screen: new-breakpoint(max-width em(500) 4);
 $medium-screen: new-breakpoint(max-width em(650) 12);
 
+body {
+	@include hidpi() {
+		font-size: 3em;
+		img {
+			width: 9em;
+		}
+	}
+}
+
 h1 {
 	font-size: 3em;
 	text-align: center;
@@ -25,6 +34,10 @@ h1 {
 
 		@include media($small-screen) {
 			@include span-columns(4);
+		}
+
+		@include hidpi {
+			@include span-columns(12);
 		}
 
 		.load-button {
@@ -45,6 +58,10 @@ h1 {
 
 		@include media($small-screen) {
 			@include span-columns(4);
+		}
+
+		@include hidpi {
+			@include span-columns(12);
 		}
 	}
 }

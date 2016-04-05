@@ -384,6 +384,12 @@ html {
             margin-bottom: 0;
             width: auto; } }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+  body {
+    font-size: 3em; }
+    body img {
+      width: 9em; } }
+
 h1 {
   font-size: 3em;
   text-align: center; }
@@ -419,6 +425,14 @@ h1 {
         width: 100%; }
         .container .pokemon-grid:last-child {
           margin-right: 0; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+      .container .pokemon-grid {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%; }
+        .container .pokemon-grid:last-child {
+          margin-right: 0; } }
     .container .pokemon-grid .load-button {
       text-align: center; }
       .container .pokemon-grid .load-button button.load-more {
@@ -444,6 +458,14 @@ h1 {
         float: left;
         display: block;
         margin-right: 7.42297%;
+        width: 100%; }
+        .container .pokemon-detailed:last-child {
+          margin-right: 0; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+      .container .pokemon-detailed {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
         width: 100%; }
         .container .pokemon-detailed:last-child {
           margin-right: 0; } }
